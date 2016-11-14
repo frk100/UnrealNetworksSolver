@@ -45,10 +45,10 @@ public class ConcreteParser implements Parser<Object> {
 
 			//lecture de la ligne du noeud de depart (si ligne contient rien, le noeud est par defaut 1)
 			line = br.readLine();
-			if (!line.contains("")) {
-				start = Integer.parseInt(line);
+			if (line != null) {
+				start = Integer.parseInt(line);	
 			}
-
+			
 			
 			String[] parts;
 			line = br.readLine();
@@ -70,13 +70,20 @@ public class ConcreteParser implements Parser<Object> {
 			e.printStackTrace();
 		}
 
+		//creation d'un graph
 		Graph graph = new Graph(nodes, edges, infinite, start);
 		return graph;
 
 	}
 
-	private void addLane(int sourceLocNo, int destLocNo, int duration) {
-		Edge lane = new Edge(nodes.get(sourceLocNo - 1), nodes.get(destLocNo - 1), duration);
+	/**
+	 * Ajout d'un lien entre les noeuds
+	 * @param sourceLoc
+	 * @param destLoc
+	 * @param duration
+	 */
+	private void addLane(int sourceLoc, int destLoc, int duration) {
+		Edge lane = new Edge(nodes.get(sourceLoc - 1), nodes.get(destLoc - 1), duration);
 		edges.add(lane);
 	}
 

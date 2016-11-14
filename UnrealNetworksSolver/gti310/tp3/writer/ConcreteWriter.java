@@ -12,14 +12,17 @@ public class ConcreteWriter implements Writer<Solution> {
 	public void write(String filename, Solution output) {
 
 		try {
-			// create a temporary file
-
+			
+			//creation du writer pour l'ecriture
 			PrintWriter writer = new PrintWriter(filename, "UTF-8");
+			
+			//ecriture du point de depart
 			writer.print(output.getDepart());
-			System.out.println(output.getDepart());
+			System.out.print(output.getDepart());
 			
 			int[][] j = output.getSolution();
-			System.out.println( j[0].length);
+			
+			//pour chaque noeud, on ecrit les information de la solution dans le fichier
 			for (int i = 0; i < j[0].length; i++) {
 				writer.println();
 				System.out.println();
@@ -37,6 +40,7 @@ public class ConcreteWriter implements Writer<Solution> {
 				System.out.print(j[1][i]);
 				
 			}
+			//fermeture de l'ecriture
 			writer.close();
 		} catch (Exception e) {
 			e.printStackTrace();
