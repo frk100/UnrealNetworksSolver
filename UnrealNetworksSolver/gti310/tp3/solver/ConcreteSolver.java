@@ -24,6 +24,7 @@ public class ConcreteSolver implements Solver<Graph, Solution> {
 	private int[][] solution;
 
 	/**
+	 * Complexite : O(n)
 	 * Execution de l'algorithme de Dijkstra, permettant la creation d'un graphe
 	 * modifie et l'obtention des distances.
 	 * 
@@ -53,6 +54,7 @@ public class ConcreteSolver implements Solver<Graph, Solution> {
 	}
 
 	/**
+	 * Complexite : O(n)
 	 * Permet de trouver les ditances minimales d'un noeud vers ses voisins
 	 * 
 	 * @param node
@@ -74,6 +76,7 @@ public class ConcreteSolver implements Solver<Graph, Solution> {
 	}
 
 	/**
+	 * Complexite : O(n)
 	 * Obtention de la distance entre 2 noeuds
 	 * 
 	 * @param node
@@ -90,6 +93,7 @@ public class ConcreteSolver implements Solver<Graph, Solution> {
 	}
 
 	/**
+	 * Complexite : O(n)
 	 * Permet d<avoir les voisins d'un noeud
 	 * 
 	 * @param node
@@ -109,6 +113,7 @@ public class ConcreteSolver implements Solver<Graph, Solution> {
 	}
 
 	/**
+	 * Complexite : O(n)
 	 * Permet l'obtention du noeud minimum
 	 * 
 	 * @param vertexes
@@ -133,6 +138,7 @@ public class ConcreteSolver implements Solver<Graph, Solution> {
 	}
 
 	/**
+	 * Complexite : O(n)
 	 * Verification dans la liste distance et retour de la valeur
 	 * 
 	 * @param destination
@@ -147,7 +153,8 @@ public class ConcreteSolver implements Solver<Graph, Solution> {
 		}
 	}
 
-	/*
+	/**
+	 * Complexite : O(n)
 	 * CEtte methode retourne le chemin le plus court entre un noeud a un autre
 	 * NULL si rien existe
 	 * note : si plusieurs chemin existe (meme distance) l'algorithme de Dijkstra selectionne de base 1 des chemins
@@ -170,6 +177,9 @@ public class ConcreteSolver implements Solver<Graph, Solution> {
 		return path;
 	}
 
+	/*
+	 * Complexite : O(n)
+	 */
 	@Override
 	public Solution solve(Graph input) {
 
